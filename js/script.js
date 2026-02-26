@@ -40,6 +40,7 @@ function updateObraSlideDisplay() {
         
         // Atualizar navegação
         updateObraNavigation();
+        updateObraIndicators();
         updateSwipeIndicators();
     }
 }
@@ -100,6 +101,7 @@ function updateNoticiaDisplay() {
     if (noticiasTrack) {
         const translateX = -(currentNoticiaIndex * (100 / totalNoticias));
         noticiasTrack.style.transform = `translateX(${translateX}%)`;
+        updateNoticiaIndicators();
         updateSwipeIndicators();
     }
 }
@@ -340,7 +342,7 @@ let touchTarget = null;
 
 document.addEventListener('touchstart', function(e) {
     touchStartX = e.changedTouches[0].screenX;
-    touchTarget = e.target.closest('.obras-carousel, .noticias-carousel, .timeline-container');
+    touchTarget = e.target.closest('.obras-carousel, .noticias-carousel, .timeline-container, .timeline-viewport, .timeline');
 });
 
 document.addEventListener('touchend', function(e) {
@@ -352,22 +354,29 @@ function handleSwipeImproved() {
     const swipeThreshold = 80;
     const diff = touchStartX - touchEndX;
     
+    console.log('Swipe detected - diff:', diff, 'target:', touchTarget);
+    
     if (Math.abs(diff) < swipeThreshold) return;
     
     if (touchTarget) {
         if (touchTarget.classList.contains('obras-carousel')) {
+            console.log('Obras swipe:', diff > 0 ? 'next' : 'previous');
             if (diff > 0) {
                 nextObraSlide();
             } else {
                 previousObraSlide();
             }
         } else if (touchTarget.classList.contains('noticias-carousel')) {
+            console.log('Noticias swipe:', diff > 0 ? 'next' : 'previous');
             if (diff > 0) {
                 nextNoticia();
             } else {
                 previousNoticia();
             }
-        } else if (touchTarget.classList.contains('timeline-container')) {
+        } else if (touchTarget.classList.contains('timeline-container') || 
+                   touchTarget.classList.contains('timeline-viewport') || 
+                   touchTarget.classList.contains('timeline')) {
+            console.log('Timeline swipe:', diff > 0 ? 'next' : 'previous');
             if (diff > 0) {
                 nextTimelineSlide();
             } else {
@@ -444,15 +453,15 @@ document.addEventListener('touchstart', function() {
 
 // Mobile Indicators Functions
 function goToObraSlide(index) {
+    console.log('goToObraSlide called with index:', index);
     currentObraSlideIndex = index;
     updateObraSlideDisplay();
-    updateObraIndicators();
 }
 
 function goToNoticia(index) {
+    console.log('goToNoticia called with index:', index);
     currentNoticiaIndex = index;
     updateNoticiaDisplay();
-    updateNoticiaIndicators();
 }
 
 function updateObraIndicators() {
@@ -468,19 +477,6 @@ function updateNoticiaIndicators() {
         indicator.classList.toggle('active', index === currentNoticiaIndex);
     });
 }
-
-// Update existing functions to include indicators
-const originalUpdateObraSlideDisplay = updateObraSlideDisplay;
-updateObraSlideDisplay = function() {
-    originalUpdateObraSlideDisplay();
-    updateObraIndicators();
-};
-
-const originalUpdateNoticiaDisplay = updateNoticiaDisplay;
-updateNoticiaDisplay = function() {
-    originalUpdateNoticiaDisplay();
-    updateNoticiaIndicators();
-};
 
 // Gerenciar indicadores de swipe
 function updateSwipeIndicators() {
