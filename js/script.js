@@ -385,33 +385,6 @@ function handleSwipeImproved() {
         }
     }
 }
-    
-    if (Math.abs(diff) > swipeThreshold) {
-        const obraSection = document.querySelector('.obras-section');
-        const timelineSection = document.querySelector('.timeline-section');
-        const noticiaSection = document.querySelector('.noticias-section');
-        
-        if (isElementInViewport(obraSection)) {
-            if (diff > 0) {
-                nextObraSlide();
-            } else {
-                previousObraSlide();
-            }
-        } else if (isElementInViewport(timelineSection)) {
-            if (diff > 0) {
-                nextTimelineSlide();
-            } else {
-                previousTimelineSlide();
-            }
-        } else if (isElementInViewport(noticiaSection)) {
-            if (diff > 0) {
-                nextNoticia();
-            } else {
-                previousNoticia();
-            }
-        }
-    }
-}
 
 // Mobile Menu Functions
 function toggleMobileMenu() {
