@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Inicializar obras
 function initObras() {
     updateObraSlideDisplay();
+    updateSwipeIndicators();
 }
 
 // Atualizar exibição da obra
@@ -39,6 +40,7 @@ function updateObraSlideDisplay() {
         
         // Atualizar navegação
         updateObraNavigation();
+        updateSwipeIndicators();
     }
 }
 
@@ -89,6 +91,7 @@ function updateObraNavigation() {
 // Inicializar notícias
 function initNoticias() {
     updateNoticiaDisplay();
+    updateSwipeIndicators();
 }
 
 // Atualizar exibição da notícia
@@ -97,6 +100,7 @@ function updateNoticiaDisplay() {
     if (noticiasTrack) {
         const translateX = -(currentNoticiaIndex * (100 / totalNoticias));
         noticiasTrack.style.transform = `translateX(${translateX}%)`;
+        updateSwipeIndicators();
     }
 }
 
@@ -329,22 +333,49 @@ function startAutoPlay() {
     // }, 7000);
 }
 
-// Função para dispositivos touch (swipe)
+// Função para dispositivos touch (swipe) melhorada
 let touchStartX = 0;
 let touchEndX = 0;
+let touchTarget = null;
 
 document.addEventListener('touchstart', function(e) {
     touchStartX = e.changedTouches[0].screenX;
+    touchTarget = e.target.closest('.obras-carousel, .noticias-carousel, .timeline-container');
 });
 
 document.addEventListener('touchend', function(e) {
     touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
+    handleSwipeImproved();
 });
 
-function handleSwipe() {
-    const swipeThreshold = 50;
+function handleSwipeImproved() {
+    const swipeThreshold = 80;
     const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) < swipeThreshold) return;
+    
+    if (touchTarget) {
+        if (touchTarget.classList.contains('obras-carousel')) {
+            if (diff > 0) {
+                nextObraSlide();
+            } else {
+                previousObraSlide();
+            }
+        } else if (touchTarget.classList.contains('noticias-carousel')) {
+            if (diff > 0) {
+                nextNoticia();
+            } else {
+                previousNoticia();
+            }
+        } else if (touchTarget.classList.contains('timeline-container')) {
+            if (diff > 0) {
+                nextTimelineSlide();
+            } else {
+                previousTimelineSlide();
+            }
+        }
+    }
+}
     
     if (Math.abs(diff) > swipeThreshold) {
         const obraSection = document.querySelector('.obras-section');
@@ -450,3 +481,42 @@ updateNoticiaDisplay = function() {
     originalUpdateNoticiaDisplay();
     updateNoticiaIndicators();
 };
+
+// Gerenciar indicadores de swipe
+function updateSwipeIndicators() {
+    // Atualizar indicadores de obras
+    const obrasLeftIndicator = document.querySelector('.obras-carousel .carousel-edge-indicator.left');
+    const obrasRightIndicator = document.querySelector('.obras-carousel .carousel-edge-indicator.right');
+    const obrasSwipeHint = document.querySelector('.obras-carousel .swipe-hint');
+    
+    if (obrasLeftIndicator && obrasRightIndicator && obrasSwipeHint) {
+        // Mostrar indicador esquerdo se não estiver no primeiro slide
+        obrasLeftIndicator.style.display = currentObraSlideIndex > 0 ? 'block' : 'none';
+        
+        // Mostrar indicador direito se não estiver no último slide
+        obrasRightIndicator.style.display = currentObraSlideIndex < totalObraSlides - 1 ? 'block' : 'none';
+        
+        // Ocultar hint após primeira interação
+        if (currentObraSlideIndex > 0) {
+            obrasSwipeHint.style.display = 'none';
+        }
+    }
+    
+    // Atualizar indicadores de notícias
+    const noticiasLeftIndicator = document.querySelector('.noticias-carousel .carousel-edge-indicator.left');
+    const noticiasRightIndicator = document.querySelector('.noticias-carousel .carousel-edge-indicator.right');
+    const noticiasSwipeHint = document.querySelector('.noticias-carousel .swipe-hint');
+    
+    if (noticiasLeftIndicator && noticiasRightIndicator && noticiasSwipeHint) {
+        // Mostrar indicador esquerdo se não estiver na primeira notícia
+        noticiasLeftIndicator.style.display = currentNoticiaIndex > 0 ? 'block' : 'none';
+        
+        // Mostrar indicador direito se não estiver na última notícia
+        noticiasRightIndicator.style.display = currentNoticiaIndex < totalNoticias - 1 ? 'block' : 'none';
+        
+        // Ocultar hint após primeira interação
+        if (currentNoticiaIndex > 0) {
+            noticiasSwipeHint.style.display = 'none';
+        }
+    }
+}
