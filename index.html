@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Acompanhe as obras do Museu de Ciências da Terra e Centro de Geociências - Complexo Científico e Cultural da Urca">
+    <meta name="theme-color" content="#1e5aa8">
+    <title>Obras do Centro de Geociências e Museu de Ciências da Terra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo-sgb.png" alt="SGB Logo">
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#projeto">O Projeto</a></li>
+                        <li><a href="#obras">Obras</a></li>
+                        <li><a href="#timeline">Timeline</a></li>
+                        <li><a href="#noticias">Notícias</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <a href="#projeto" onclick="closeMobileMenu()">O Projeto</a>
+                <a href="#obras" onclick="closeMobileMenu()">Obras</a>
+                <a href="#timeline" onclick="closeMobileMenu()">Timeline</a>
+                <a href="#noticias" onclick="closeMobileMenu()">Notícias</a>
+                <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>OBRAS DO MUSEU DE CIÊNCIAS DA TERRA<br>E CENTRO DE GEOCIÊNCIAS</h1>
+        </div>
+        <div class="hero-arrow">
+            <svg width="30" height="30" viewBox="0 0 30 30">
+                <path d="M15 20L10 15L15 10L20 15L15 20Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- O Projeto Section -->
+    <section id="projeto" class="projeto-section">
+        <div class="container">
+            <h2 class="section-title">O PROJETO</h2>
+            <div class="projeto-content">
+                <h3>Um Novo Marco para as Geociências e a Cultura no Brasil</h3>
+                
+                <p>O Museu de Ciências da Terra (MCTer), uma das instituições científicas e culturais mais emblemáticas do país, está vivenciando um momento histórico com o início de sua revitalização e expansão. Fundado em 1907 e localizado no emblemático Palácio da Geologia, na Urca (Rio de Janeiro), o MCTer abriga um acervo ímpar de minerais, rochas, fósseis e documentos que representam mais de um século de estudos geológicos e paleontológicos no Brasil.</p>
+                
+                <p>Após décadas de esforços para reabrir e modernizar suas instalações — que foram parcialmente danificadas por um incêndio em 1973 —, o projeto atual marca o início das obras do novo Centro Científico e Cultural da Urca, resultado de uma parceria estratégica entre o Serviço Geológico do Brasil (SGB) e a Petrobras, com investimentos que ultrapassam R$ 200 milhões.</p>
+
+                <p><strong>Este empreendimento ambicioso contempla:</strong></p>
+
+                <p>A revitalização completa do Museu de Ciências da Terra, restaurando seu edifício histórico e ampliando seus espaços expositivos e de pesquisa;</p>
+
+                <p>A criação do Centro de Referência em Geociências (CRG), com laboratórios de ponta em isotopia, geocronologia e outras áreas avançadas de análise científica;</p>
+
+                <p>A implantação da Litoteca do SGB, um acervo técnico de amostras geológicas essenciais para pesquisa e inovação.</p>
+
+                <p>Mais do que restaurar um patrimônio histórico, este projeto visa fortalecer o papel do MCTer como referência nacional e internacional em pesquisa geocientífica, educação e divulgação científica, conectando a história da Terra às demandas contemporâneas de conhecimento, sustentabilidade e desenvolvimento tecnológico.</p>
+
+                <p>Acompanhe aqui passo a passo a evolução dessa obra que promete transformar a paisagem cultural e científica do Rio de Janeiro e do Brasil.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acompanhe as Obras Section -->
+    <section id="obras" class="obras-section">
+        <div class="container">
+            <h2 class="section-title white">ACOMPANHE AS OBRAS</h2>
+            
+            <div class="obras-carousel">
+                <div class="obras-nav">
+                    <button class="obras-prev" onclick="previousObraSlide()">&lt;</button>
+                    <button class="obras-next" onclick="nextObraSlide()">&gt;</button>
+                </div>
+                
+                <div class="obras-viewport">
+                    <div class="obras-track">
+                        <!-- Slide 1 - Com foto -->
+                        <div class="obra-slide active">
+                            <div class="obra-content with-image">
+                                <div class="obra-text">
+                                    <h3>Dia 26/02/26</h3>
+                                    <p>Hoje acompanhamos o progresso das obras do Centro Científico e Cultural da Urca. A estrutura principal está sendo finalizada e os trabalhos de acabamento já foram iniciados nas primeiras alas do edifício.</p>
+                                </div>
+                                <div class="obra-image">
+                                    <img src="images/obra-foto.jpg" alt="Obra em andamento" onerror="this.src='https://via.placeholder.com/400x300/1e5aa8/white?text=Obra+26/02/26'">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 - Sem foto -->
+                        <div class="obra-slide">
+                            <div class="obra-content without-image">
+                                <div class="obra-text centered">
+                                    <h3>Dia 20/02/26</h3>
+                                    <p>Relatório semanal das atividades: Esta semana concentramos os esforços na instalação dos sistemas elétricos e hidráulicos. As equipes técnicas trabalharam na preparação da infraestrutura para os futuros laboratórios científicos. Todos os prazos estão sendo cumpridos conforme o cronograma estabelecido.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 - Com foto -->
+                        <div class="obra-slide">
+                            <div class="obra-content with-image">
+                                <div class="obra-text">
+                                    <h3>Dia 15/02/26</h3>
+                                    <p>Grandes avanços na construção do auditório principal do Centro Cultural. A acústica especializada está sendo instalada e os assentos chegaram na obra. Em breve teremos um dos mais modernos espaços culturais do Rio de Janeiro.</p>
+                                </div>
+                                <div class="obra-image">
+                                    <img src="images/obra-foto.jpg" alt="Construção do auditório" onerror="this.src='https://via.placeholder.com/400x300/1e5aa8/white?text=Auditório+15/02/26'">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4 - Sem foto -->
+                        <div class="obra-slide">
+                            <div class="obra-content without-image">
+                                <div class="obra-text centered">
+                                    <h3>Dia 10/02/26</h3>
+                                    <p>Início da semana marcou o começo dos trabalhos de paisagismo e área externa do Centro. Os jardins temáticos estão sendo projetados para criar um ambiente harmonioso entre ciência e natureza. A sustentabilidade é uma prioridade em todas as decisões do projeto, desde a escolha das plantas até os sistemas de irrigação inteligente.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Indicators for Obras -->
+            <div class="mobile-indicators obras-indicators">
+                <div class="mobile-indicator active" onclick="goToObraSlide(0)"></div>
+                <div class="mobile-indicator" onclick="goToObraSlide(1)"></div>
+                <div class="mobile-indicator" onclick="goToObraSlide(2)"></div>
+                <div class="mobile-indicator" onclick="goToObraSlide(3)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">LINHA DO TEMPO</h2>
+            <p class="timeline-subtitle">PROJETO DE PDI DE OBRAS E INFRAESTRUTURA LABORATORIAL – COMPLEXO CIENTÍFICO E CULTURAL DA URCA</p>
+            
+            <div class="timeline">
+                <div class="timeline-container">
+                    <div class="timeline-nav">
+                        <button class="timeline-prev" onclick="previousTimelineSlide()">&lt;</button>
+                        <button class="timeline-next" onclick="nextTimelineSlide()">&gt;</button>
+                    </div>
+                    
+                    <div class="timeline-viewport">
+                        <div class="timeline-track">
+                            <!-- Slide 1 - 2025 (Parte 1) -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item active">
+                                        <div class="timeline-date">14 mai/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Assinatura do Termo de Cooperação, pela presidência do SGB, para as obras do CRG</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">15 mai/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Assinatura do Termo de Cooperação, pela presidência do SGB, para os equipamentos do CRG</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">16 mai/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Assinatura do Termo de Cooperação, pela presidência do SGB, para as obras da Litoteca Urca</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">19 mai/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Assinatura do Termo de Cooperação, pela presidência do SGB, para as obras do MCTER</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2 - 2025 (Parte 2) -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">24 jun/2025</div>
+                                        <div class="timeline-content">
+                                            <p>1ª Parcela dos equipamentos do CRG - R$ 16.421.307,28 (FINATEC)</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">24 jun/2025</div>
+                                        <div class="timeline-content">
+                                            <p>1ª Parcela da obra do CRG - R$ 24.929.743,31 (FINATEC)</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">10 jul/2025</div>
+                                        <div class="timeline-content">
+                                            <p>1ª Parcela da obra do MCTER - R$ 26.464.127,97 (FINATEC)</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">24 jul/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Atualização do orçamento MCTER pela Schiffino e Junqueira Arquitetos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3 - 2025 (Parte 3) -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">25 jul/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Reunião SGB-FINATEC para alinhamento do processo licitatório</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">31 jul/2025</div>
+                                        <div class="timeline-content">
+                                            <p>1ª Parcela da obra da Litoteca Urca - R$ 6.920.716,08 (FINATEC)</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">04 ago/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Atualização do orçamento CRG pela Faccio Arquitetura</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">08 ago/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Envio dos 1º aditivos de valor para CRG, MCTER e Litoteca no SIGITEC</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 4 - 2025 (Parte 4) -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">18 ago/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Habilitação do 1º aditivo de valor do CRG e MCTER</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">25 ago/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Comitiva da Petrobras visita o MCTER com Célia Corsino e Leonardo Lopes</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">29 ago/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Envio dos editais de obras do CRG e MCTER pela FINATEC</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">19 set/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Publicação dos editais de obras do CRG, MCTER e Litoteca Urca</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 5 - 2025 (Parte 5) -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">03 out/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Publicação do edital de diligenciamento da obra do CRG</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">31 out/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Licitação da obra do CRG foi escassa - sem participantes</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">10 nov/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Cancelamento do 1º aditivo de valor para a obra do CRG</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">28 nov/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Substituição de Leonardo Lopes por Raíssa Mesquita como ponto focal do CRG</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 6 - 2025 (Parte 6) -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">15 dez/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Homologação das empresas vencedoras dos diligenciamentos CRG, MCTER e Litoteca</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">17 dez/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Publicação do novo edital de obras do CRG pela FINATEC</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">30 dez/2025</div>
+                                        <div class="timeline-content">
+                                            <p>FINATEC envia carta para adequação do MCTER - proposta R$ 89.669.203,74</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">31 dez/2025</div>
+                                        <div class="timeline-content">
+                                            <p>Coordenação solicita aditivo de valor para obras do MCTER</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 7 - 2026 -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">2026</div>
+                                <div class="timeline-items">
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">07 jan/2026</div>
+                                        <div class="timeline-content">
+                                            <p>Publicação do novo edital de obras da Litoteca Urca e aprovação CRG</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">16 jan/2026</div>
+                                        <div class="timeline-content">
+                                            <p>Envio do 2º aditivo de valor para MCTER através do SIGITEC</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">27 jan/2026</div>
+                                        <div class="timeline-content">
+                                            <p>Aprovação do 2º aditivo de valor para o projeto de obras do MCTER</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">26 fev/2026</div>
+                                        <div class="timeline-content">
+                                            <p><strong>Data atual</strong> - Acompanhamento das obras em andamento</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 8 - Futuro -->
+                            <div class="timeline-slide">
+                                <div class="timeline-year">FUTURO</div>
+                                <div class="timeline-future">
+                                    <div class="timeline-item">
+                                        <div class="timeline-content">
+                                            <p><strong>2º sem/2026</strong><br>Conclusão dos espaços culturais e início das operações dos laboratórios</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-content">
+                                            <p><strong>1º trim/2027</strong><br>Inauguração oficial do Centro Científico e Cultural da Urca</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-content">
+                                            <p><strong>2027-2028</strong><br>Início pleno das atividades de P&D&I e programação cultural</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notícias Section -->
+    <section id="noticias" class="noticias-section">
+        <div class="container">
+            <h2 class="section-title">NOTÍCIAS</h2>
+            <div class="noticias-carousel">
+                <div class="noticias-nav">
+                    <button class="noticias-prev" onclick="previousNoticia()">&lt;</button>
+                    <button class="noticias-next" onclick="nextNoticia()">&gt;</button>
+                </div>
+                <div class="noticias-viewport">
+                    <div class="noticias-track">
+                        <!-- Notícia 1 -->
+                        <div class="noticia-item">
+                            <div>
+                                <div class="noticia-image">
+                                    <img src="images/noticia1.jpg" alt="Obras do Centro Científico" onerror="this.src='https://via.placeholder.com/400x300/1e5aa8/white?text=Centro+Científico'">
+                                </div>
+                                <div class="noticia-content">
+                                    <h3>CENTRO CIENTÍFICO E CULTURAL DA URCA RECEBE NOVAS INSTALAÇÕES</h3>
+                                    <p>As obras do Centro Científico e Cultural da Urca avançam em ritmo acelerado com a conclusão da primeira fase de construção. O projeto, que integra tecnologia de ponta com sustentabilidade ambiental, promete revolucionar a pesquisa científica no Rio de Janeiro. Os laboratórios já estão sendo equipados com instrumentos de última geração.</p>
+                                    <a href="#" class="btn-leia-mais">LEIA MAIS</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Notícia 2 -->
+                        <div class="noticia-item">
+                            <div>
+                                <div class="noticia-image">
+                                    <img src="images/noticia2.jpg" alt="Museu de Ciências da Terra" onerror="this.src='https://via.placeholder.com/400x300/1e5aa8/white?text=Museu+da+Terra'">
+                                </div>
+                                <div class="noticia-content">
+                                    <h3>MUSEU DE CIÊNCIAS DA TERRA INAUGURA NOVA ALA INTERATIVA</h3>
+                                    <p>O Museu de Ciências da Terra do SGB amplia suas instalações com uma moderna ala interativa dedicada à educação científica. O espaço contará com simuladores geológicos, painéis touchscreen e uma impressionante coleção de minerais brasileiros. A inauguração está prevista para o segundo semestre de 2026.</p>
+                                    <a href="#" class="btn-leia-mais">LEIA MAIS</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Notícia 3 -->
+                        <div class="noticia-item">
+                            <div>
+                                <div class="noticia-image">
+                                    <img src="images/noticia1.jpg" alt="Parcerias Internacionais" onerror="this.src='https://via.placeholder.com/400x300/1e5aa8/white?text=Parcerias+Globais'">
+                                </div>
+                                <div class="noticia-content">
+                                    <h3>SGB FIRMA PARCERIAS INTERNACIONAIS PARA PESQUISA EM GEOCIÊNCIAS</h3>
+                                    <p>O Serviço Geológico do Brasil estabelece importantes acordos de cooperação com instituições de pesquisa da Europa e América do Norte. As parcerias focarão em estudos sobre mudanças climáticas, recursos minerais sustentáveis e preservação do patrimônio geológico brasileiro para as futuras gerações.</p>
+                                    <a href="#" class="btn-leia-mais">LEIA MAIS</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Indicators for Noticias -->
+            <div class="mobile-indicators noticias-indicators">
+                <div class="mobile-indicator active" onclick="goToNoticia(0)"></div>
+                <div class="mobile-indicator" onclick="goToNoticia(1)"></div>
+                <div class="mobile-indicator" onclick="goToNoticia(2)"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">DÚVIDAS FREQUENTES</h2>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>LOREM IPSUM DOLOR SITE AMET CONSECTETUR?</h3>
+                        <span class="faq-icon">−</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>LOREM IPSUM DOLOR SITE AMET CONSECTETUR?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>LOREM IPSUM DOLOR SITE AMET CONSECTETUR?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <button class="voltar-topo" onclick="scrollToTop()">
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path d="M10 5L15 10L10 15L5 10L10 5Z" fill="currentColor"/>
+                    </svg>
+                    VOLTAR AO TOPO
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
