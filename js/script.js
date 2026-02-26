@@ -376,12 +376,16 @@ function handleSwipeImproved() {
         } else if (touchTarget.classList.contains('timeline-container') || 
                    touchTarget.classList.contains('timeline-viewport') || 
                    touchTarget.classList.contains('timeline')) {
-            console.log('Timeline swipe:', diff > 0 ? 'next' : 'previous');
-            if (diff > 0) {
-                nextTimelineSlide();
-            } else {
-                previousTimelineSlide();
+            // Swipe da timeline horizontal (apenas desktop)
+            if (window.innerWidth > 768) {
+                console.log('Timeline swipe:', diff > 0 ? 'next' : 'previous');
+                if (diff > 0) {
+                    nextTimelineSlide();
+                } else {
+                    previousTimelineSlide();
+                }
             }
+            // No mobile, a timeline é vertical com scroll natural - não precisa de swipe
         }
     }
 }
