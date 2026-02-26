@@ -401,11 +401,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Improve touch scrolling
-document.addEventListener('touchmove', function(e) {
-    e.preventDefault();
-}, { passive: false });
-
 // Prevent zoom on input focus (iOS)
 document.addEventListener('touchstart', function() {
     if (window.innerWidth < 768) {
