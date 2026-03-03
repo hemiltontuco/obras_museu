@@ -8,7 +8,7 @@ const totalNoticias = 3;
 
 // Controle da timeline
 let currentTimelineIndex = 0;
-const totalTimelineSlides = 8;
+const totalTimelineSlides = 5;
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {

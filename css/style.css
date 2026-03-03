@@ -445,11 +445,11 @@ body {
 .timeline-track {
     display: flex;
     transition: transform 0.5s ease;
-    width: calc(800% + 160px);
+    width: calc(500% + 100px);
 }
 
 .timeline-slide {
-    min-width: calc(100% / 8);
+    min-width: calc(100% / 5);
     padding: 0 20px;
 }
 
