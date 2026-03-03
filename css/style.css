@@ -244,7 +244,7 @@ body {
 /* Obras Section */
 .obras-section {
     padding: 100px 0;
-    background: #1e5aa8;
+    background: #3c81da;
     color: white;
 }
 
@@ -699,6 +699,189 @@ body {
 .btn-leia-mais:hover {
     background: #164a94;
     transform: translateY(-2px);
+}
+
+/* Equipe Section */
+.equipe-section {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.equipe-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.equipe-group {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.equipe-group:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.equipe-group-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e5aa8;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #1e5aa8;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.equipe-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.equipe-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #1e5aa8;
+    transition: all 0.3s ease;
+}
+
+.equipe-item:hover {
+    background: #e3f2fd;
+    transform: translateX(5px);
+}
+
+.equipe-cargo {
+    font-weight: 600;
+    color: #1e5aa8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.equipe-nome {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.equipe-subgroup {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.equipe-subgroup-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e5aa8;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1e5aa8;
+}
+
+.equipe-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.equipe-members span {
+    background: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.equipe-members span:hover {
+    background: #1e5aa8;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.equipe-description {
+    margin-top: 20px;
+}
+
+.equipe-description p {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.equipe-description p:last-child {
+    margin-bottom: 0;
+}
+
+.equipe-description strong {
+    color: #1e5aa8;
+    font-weight: 600;
+}
+
+/* Equipe Mobile Styles */
+@media (max-width: 768px) {
+    .equipe-section {
+        padding: 60px 0;
+    }
+    
+    .equipe-content {
+        gap: 30px;
+    }
+    
+    .equipe-group {
+        padding: 25px 20px;
+    }
+    
+    .equipe-group-title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .equipe-item {
+        padding: 15px;
+    }
+    
+    .equipe-cargo {
+        font-size: 0.85rem;
+    }
+    
+    .equipe-nome {
+        font-size: 0.95rem;
+    }
+    
+    .equipe-subgroup {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+    
+    .equipe-subgroup-title {
+        font-size: 1.1rem;
+    }
+    
+    .equipe-members span {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
+    .equipe-description p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
 }
 
 /* FAQ Section */
