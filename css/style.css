@@ -1600,3 +1600,69 @@ html {
         display: block;
     }
 }
+
+/* Logos dos Parceiros */
+.logos-section {
+    background: #f8f9fa;
+    padding: 60px 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-item img {
+    max-height: 80px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(0.3);
+    transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+/* Responsive para logos */
+@media (max-width: 768px) {
+    .logos-section {
+        padding: 40px 0;
+    }
+    
+    .logos-container {
+        gap: 40px;
+        justify-content: space-around;
+    }
+    
+    .logo-item img {
+        max-height: 60px;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logos-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .logo-item img {
+        max-height: 50px;
+        max-width: 120px;
+    }
+}
