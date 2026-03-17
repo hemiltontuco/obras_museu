@@ -20,11 +20,11 @@
                 <nav class="nav">
                     <ul>
                         <li><a href="#projeto">O Projeto</a></li>
-                        <li><a href="#obras">Obras</a></li>
+                        <!-- <li><a href="#obras">Obras</a></li> -->
                         <li><a href="#timeline">Timeline</a></li>
                         <li><a href="#noticias">Notícias</a></li>
                         <li><a href="#equipe">Equipe</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <!-- <li><a href="#faq">FAQ</a></li> -->
                     </ul>
                 </nav>
                 <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -35,11 +35,11 @@
             </div>
             <div class="mobile-menu">
                 <a href="#projeto" onclick="closeMobileMenu()">O Projeto</a>
-                <a href="#obras" onclick="closeMobileMenu()">Obras</a>
+                <!-- <a href="#obras" onclick="closeMobileMenu()">Obras</a> -->
                 <a href="#timeline" onclick="closeMobileMenu()">Timeline</a>
                 <a href="#noticias" onclick="closeMobileMenu()">Notícias</a>
                 <a href="#equipe" onclick="closeMobileMenu()">Equipe</a>
-                <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+                <!-- <a href="#faq" onclick="closeMobileMenu()">FAQ</a> -->
             </div>
         </div>
     </header>
@@ -83,7 +83,8 @@
         </div>
     </section>
 
-    <!-- Acompanhe as Obras Section -->
+    <!-- Acompanhe as Obras Section - COMENTADO TEMPORARIAMENTE -->
+    <!--
     <section id="obras" class="obras-section">
         <div class="container">
             <h2 class="section-title white">ACOMPANHE AS OBRAS</h2>
@@ -98,7 +99,7 @@
                 
                 <div class="obras-viewport">
                     <div class="obras-track">
-                        <!-- Slide 1 - Com foto -->
+                        <!-- Slide 1 - Com foto
                         <div class="obra-slide active">
                             <div class="obra-content with-image">
                                 <div class="obra-text">
@@ -111,7 +112,7 @@
                             </div>
                         </div>
                         
-                        <!-- Slide 2 - Sem foto -->
+                        <!-- Slide 2 - Sem foto
                         <div class="obra-slide">
                             <div class="obra-content without-image">
                                 <div class="obra-text centered">
@@ -121,7 +122,7 @@
                             </div>
                         </div>
                         
-                        <!-- Slide 3 - Com foto -->
+                        <!-- Slide 3 - Com foto
                         <div class="obra-slide">
                             <div class="obra-content with-image">
                                 <div class="obra-text">
@@ -134,7 +135,7 @@
                             </div>
                         </div>
                         
-                        <!-- Slide 4 - Sem foto -->
+                        <!-- Slide 4 - Sem foto
                         <div class="obra-slide">
                             <div class="obra-content without-image">
                                 <div class="obra-text centered">
@@ -147,7 +148,7 @@
                 </div>
             </div>
             
-            <!-- Mobile Indicators for Obras -->
+            <!-- Mobile Indicators for Obras
             <div class="mobile-indicators obras-indicators">
                 <div class="mobile-indicator active" onclick="goToObraSlide(0)"></div>
                 <div class="mobile-indicator" onclick="goToObraSlide(1)"></div>
@@ -156,6 +157,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Timeline Section -->
     <section id="timeline" class="timeline-section">
@@ -265,7 +267,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Slide 4 - 2026 -->
+                            <!-- Slide 4 - 2026 (Parte 1) -->
                             <div class="timeline-slide">
                                 <div class="timeline-year">2026</div>
                                 <div class="timeline-items">
@@ -284,14 +286,20 @@
                                 </div>
                             </div>
                             
-                            <!-- Slide 5 - Etapas Futuras (Parte 1) -->
+                            <!-- Slide 5 - 2026 (Parte 2) -->
                             <div class="timeline-slide">
-                                <div class="timeline-year">ETAPAS FUTURAS</div>
-                                <div class="timeline-future">
+                                <div class="timeline-year">2026</div>
+                                <div class="timeline-items">
                                     <div class="timeline-item">
                                         <div class="timeline-date">10 mar/2026</div>
                                         <div class="timeline-content">
                                             <p>Publicação dos novos editais (FINATEC) para contratação das obras do CRG e Litoteca</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-date">12 mar/2026</div>
+                                        <div class="timeline-content">
+                                            <p>Assinatura dos contratos com as empresas responsáveis pela execução e pelo diligenciamento da obra do MCTER</p>
                                         </div>
                                     </div>
                                     <div class="timeline-item">
@@ -309,7 +317,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Slide 6 - Etapas Futuras (Parte 2) -->
+                            <!-- Slide 6 - Etapas Futuras -->
                             <div class="timeline-slide">
                                 <div class="timeline-year">ETAPAS FUTURAS</div>
                                 <div class="timeline-future">
@@ -434,15 +442,16 @@
                             <p>Publicação do resultado das licitações dos 2° editais (litoteca e CRG) (Sem vencedores)</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Etapas Futuras -->
-                <div class="timeline-mobile-year">ETAPAS FUTURAS</div>
-                <div class="timeline-mobile-items">
                     <div class="timeline-mobile-item">
                         <div class="timeline-mobile-date">10 mar/2026</div>
                         <div class="timeline-mobile-content">
                             <p>Publicação dos novos editais (FINATEC) para contratação das obras do CRG e Litoteca</p>
+                        </div>
+                    </div>
+                    <div class="timeline-mobile-item">
+                        <div class="timeline-mobile-date">12 mar/2026</div>
+                        <div class="timeline-mobile-content">
+                            <p>Assinatura dos contratos com as empresas responsáveis pela execução e pelo diligenciamento da obra do MCTER</p>
                         </div>
                     </div>
                     <div class="timeline-mobile-item">
@@ -457,6 +466,11 @@
                             <p>Assinatura do contrato com a empresa vencedora do processo licitatório da obra do MCTer (FINATEC e Empresa)</p>
                         </div>
                     </div>
+                </div>
+                
+                <!-- Etapas Futuras -->
+                <div class="timeline-mobile-year">ETAPAS FUTURAS</div>
+                <div class="timeline-mobile-items">
                     <div class="timeline-mobile-item">
                         <div class="timeline-mobile-date">15 a 31 mar/2026</div>
                         <div class="timeline-mobile-content">
@@ -467,6 +481,14 @@
                         <div class="timeline-mobile-date">31 mar/2026</div>
                         <div class="timeline-mobile-content">
                             <p>Finalização do processo de licença para início de obras junto à Prefeitura do Rio</p>
+                        </div>
+                    </div>
+                    <div class="timeline-mobile-item">
+                        <div class="timeline-mobile-date">01 abr/2026</div>
+                        <div class="timeline-mobile-content">
+                            <p>Movimentação das associações sob liderança da SERAFI-RJ para o novo espaço que será dedicado a esta finalidade</p>
+                        </div>
+                    </div>
                         </div>
                     </div>
                     <div class="timeline-mobile-item">
@@ -680,7 +702,8 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Section - COMENTADO TEMPORARIAMENTE -->
+    <!--
     <section id="faq" class="faq-section">
         <div class="container">
             <h2 class="section-title">DÚVIDAS FREQUENTES</h2>
@@ -715,6 +738,7 @@
             </div>
         </div>
     </section>
+    -->
 
     <!-- Logos dos Parceiros Section -->
     <section class="logos-section">
