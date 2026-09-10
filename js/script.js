@@ -4,11 +4,30 @@ const totalObraSlides = 4;
 
 // Controle do carrossel de notícias
 let currentNoticiaIndex = 0;
-const totalNoticias = 3;
+const totalNoticias = 4; // MUDAR DE 3 PARA 4
 
-// Controle da timeline
+// Controle da timeline - DINÂMICO
 let currentTimelineIndex = 0;
-const totalTimelineSlides = 6;
+let totalTimelineSlides = 0; // Será calculado automaticamente
+
+// Função para calcular slides dinamicamente
+function calculateTimelineSlides() {
+    const slides = document.querySelectorAll('.timeline-slide');
+    totalTimelineSlides = slides.length;
+    
+    // Configurar largura do track baseado no número real de slides
+    const track = document.querySelector('.timeline-track');
+    if (track) {
+        track.style.width = `${totalTimelineSlides * 100}%`;
+    }
+    
+    // Configurar largura individual dos slides
+    slides.forEach(slide => {
+        slide.style.width = `${100 / totalTimelineSlides}%`;
+    });
+    
+    console.log(`Timeline configurada para ${totalTimelineSlides} slides`);
+}
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
@@ -122,36 +141,31 @@ function nextNoticia() {
 
 // Inicializar timeline
 function initTimeline() {
-    updateTimelineDisplay();
+    calculateTimelineSlides(); // Calcular slides primeiro
+    updateTimelineSlideDisplay();
 }
 
-// Atualizar exibição da timeline
-function updateTimelineDisplay() {
-    const timelineTrack = document.querySelector('.timeline-track');
-    if (timelineTrack) {
+// Função melhorada para navegação
+function updateTimelineSlideDisplay() {
+    const track = document.querySelector('.timeline-track');
+    if (track && totalTimelineSlides > 0) {
         const translateX = -(currentTimelineIndex * (100 / totalTimelineSlides));
-        timelineTrack.style.transform = `translateX(${translateX}%)`;
-        
-        // Atualizar indicadores visuais das setas
-        updateTimelineNavigation();
+        track.style.transform = `translateX(${translateX}%)`;
     }
 }
 
-// Navegar para slide anterior da timeline
-function previousTimelineSlide() {
-    if (currentTimelineIndex > 0) {
-        currentTimelineIndex--;
-        updateTimelineDisplay();
-        addTimelineTransitionEffect();
-    }
-}
-
-// Navegar para próximo slide da timeline
+// Funções de navegação com validação
 function nextTimelineSlide() {
     if (currentTimelineIndex < totalTimelineSlides - 1) {
         currentTimelineIndex++;
-        updateTimelineDisplay();
-        addTimelineTransitionEffect();
+        updateTimelineSlideDisplay();
+    }
+}
+
+function previousTimelineSlide() {
+    if (currentTimelineIndex > 0) {
+        currentTimelineIndex--;
+        updateTimelineSlideDisplay();
     }
 }
 
@@ -322,6 +336,11 @@ function isElementInViewport(el) {
     );
 }
 
+// Função auxiliar para verificar se é mobile
+function isMobile() {
+    return window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 // Auto-play para carrossels (opcional)
 function startAutoPlay() {
     // Auto-play para obras (desabilitado por padrão)
@@ -335,57 +354,35 @@ function startAutoPlay() {
     // }, 7000);
 }
 
-// Função para dispositivos touch (swipe) melhorada
-let touchStartX = 0;
-let touchEndX = 0;
-let touchTarget = null;
-
-document.addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-    touchTarget = e.target.closest('.obras-carousel, .noticias-carousel, .timeline-container, .timeline-viewport, .timeline');
-});
-
-document.addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipeImproved();
-});
-
+// Atualizar função de swipe para usar detecção mobile melhorada
 function handleSwipeImproved() {
     const swipeThreshold = 80;
     const diff = touchStartX - touchEndX;
-    
-    console.log('Swipe detected - diff:', diff, 'target:', touchTarget);
     
     if (Math.abs(diff) < swipeThreshold) return;
     
     if (touchTarget) {
         if (touchTarget.classList.contains('obras-carousel')) {
-            console.log('Obras swipe:', diff > 0 ? 'next' : 'previous');
             if (diff > 0) {
                 nextObraSlide();
             } else {
                 previousObraSlide();
             }
         } else if (touchTarget.classList.contains('noticias-carousel')) {
-            console.log('Noticias swipe:', diff > 0 ? 'next' : 'previous');
             if (diff > 0) {
                 nextNoticia();
             } else {
                 previousNoticia();
             }
-        } else if (touchTarget.classList.contains('timeline-container') || 
+        } else if ((touchTarget.classList.contains('timeline-container') || 
                    touchTarget.classList.contains('timeline-viewport') || 
-                   touchTarget.classList.contains('timeline')) {
-            // Swipe da timeline horizontal (apenas desktop)
-            if (window.innerWidth > 768) {
-                console.log('Timeline swipe:', diff > 0 ? 'next' : 'previous');
-                if (diff > 0) {
-                    nextTimelineSlide();
-                } else {
-                    previousTimelineSlide();
-                }
+                   touchTarget.classList.contains('timeline')) && !isMobile()) {
+            // Timeline swipe APENAS no desktop
+            if (diff > 0) {
+                nextTimelineSlide();
+            } else {
+                previousTimelineSlide();
             }
-            // No mobile, a timeline é vertical com scroll natural - não precisa de swipe
         }
     }
 }
